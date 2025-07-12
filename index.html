@@ -50,6 +50,7 @@
     <a href="index_fr.html">Français</a>
     <a href="index_ar.html">العربية</a>
   </div>
+  <div id="menu-container"></div>
   <article>
     <h1>Searching for My Origins — A Genealogical Journey</h1>
 
@@ -157,6 +158,13 @@
       Kamel El Gazzah, 2025
     </footer>
   </article>
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>
