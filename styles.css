@@ -1,172 +1,174 @@
- html,
- body {
-   height: 100%;
-   margin: 0;
-   padding: 0;
- }
+/* Base structure */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
- body {
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-   /* hauteur minimum = écran */
-   max-width: 900px;
-   margin: 2rem auto;
-    padding: 0 1rem;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background-color: #f9f9f9;
-   color: #333;
-   line-height: 1.6;
- }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
 
+/* Contenu décalé à droite sur desktop */
+article,
+main {
+  margin-left: 240px;
+  padding: 2rem;
+  max-width: 900px;
+}
 
+/* Menu latéral */
+.sidebar {
+  width: 220px;
+  background-color: #2c3e50;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  color: #ecf0f1;
+}
 
- /* Le contenu principal (header + main) va grandir pour prendre l'espace disponible */
- header,
- main {
-   padding-left: 220px;
-   /* si menu latéral fixe de 220px */
-   padding-right: 1rem;
- }
+.sidebar h2 {
+  color: #ecf0f1;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
 
- /* Pour que le main prenne tout l'espace vertical restant */
- main {
-   flex: 1 0 auto;
-   /* pousse le footer en bas */
-   max-width: 900px;
-   margin: 2rem auto;
-   padding-top: 0;
- }
+.sidebar a {
+  display: block;
+  color: #ecf0f1;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
 
- /* Footer en bas */
- footer {
-   flex-shrink: 0;
-   /* ne pas rétrécir */
-   background-color: #ecf0f1;
-   color: #555;
-   text-align: center;
-   padding: 1.5rem;
-   margin-top: 3rem;
-   font-size: 0.9rem;
- }
- 
+.sidebar a:hover {
+  background-color: #1abc9c;
+}
 
- /* Si ton menu est en position fixed, décale le contenu */
- .sidebar {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 220px;
-   height: 100vh;
-   background-color: #2c3e50;
-   padding-top: 1rem;
-   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-   z-index: 1000;
-   color: #ecf0f1;
- }
+/* Header + main = contenu flexible */
+header,
+main {
+  flex: 1 0 auto;
+  padding-left: 220px;
+  padding-right: 1rem;
+}
 
+/* Footer */
+footer {
+  flex-shrink: 0;
+  background-color: #ecf0f1;
+  color: #555;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
 
- h1,
- h2 {
-   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-   color: #3a3a3a;
-   margin-bottom: 0.5rem;
- }
+h1,
+h2 {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  color: #3a3a3a;
+  margin-bottom: 0.5rem;
+}
 
- h1 {
-   font-size: 2.4rem;
-   border-bottom: 2px solid #ccc;
-   padding-bottom: 0.3rem;
- }
+h1 {
+  font-size: 2.4rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+}
 
- h2 {
-   font-size: 1.6rem;
-   margin-top: 2.5rem;
- }
+h2 {
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+}
 
- p {
-   margin-bottom: 1.3rem;
-   font-size: 1.1rem;
- }
+p {
+  margin-bottom: 1.3rem;
+  font-size: 1.1rem;
+}
 
- blockquote {
-   font-style: italic;
-   color: #555;
-   border-left: 4px solid #ccc;
-   padding-left: 1rem;
-   margin: 1.5rem 0;
-   background: #f0f0f0;
- }
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  background: #f0f0f0;
+}
 
- footer {
-   margin-top: 3rem;
-   font-size: 0.9rem;
-   color: #666;
-   text-align: center;
- }
+/* Langue switcher */
+.language-switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.95rem;
+}
 
- .language-switch {
-   position: absolute;
-   top: 1rem;
-   right: 1rem;
-   font-size: 0.95rem;
- }
+.language-switch a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
 
- .language-switch a {
-   text-decoration: none;
-   color: #0077cc;
-   font-weight: bold;
- }
+.language-switch a:hover {
+  text-decoration: underline;
+}
 
- .language-switch a:hover {
-   text-decoration: underline;
- }
+/* ------------------------------------
+   ✅ Responsive Design (Mobile/Tablet)
+------------------------------------- */
+@media (max-width: 768px) {
 
- body {
-   margin: 0;
-   font-family: Arial, sans-serif;
-   display: flex;
- }
+  /* Layout vertical */
+  body {
+    flex-direction: column;
+  }
 
- /* MENU LATÉRAL */
- /* MENU LATÉRAL FIXE */
- .sidebar {
-   width: 220px;
-   background-color: #2c3e50;
-   height: 100vh;
-   position: fixed;
-   top: 0;
-   left: 0;
-   padding-top: 1rem;
-   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-   z-index: 1000;
- }
+  /* Menu devient bloc en haut */
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
- /* CORPS DU CONTENU */
- article,
- main {
-   margin-left: 240px;
-   /* décale le contenu à droite du menu */
-   padding: 2rem;
-   max-width: 900px;
- }
+  .sidebar a {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
 
+  /* Contenu sans décalage */
+  article,
+  main {
+    margin-left: 0;
+    padding: 1rem;
+    max-width: 100%;
+  }
 
- .sidebar h2 {
-   color: #ecf0f1;
-   text-align: center;
-   margin-bottom: 2rem;
-   font-size: 1.2rem;
- }
+  header,
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
- .sidebar a {
-   display: block;
-   color: #ecf0f1;
-   padding: 12px 20px;
-   text-decoration: none;
-   transition: background 0.2s;
- }
-
- .sidebar a:hover {
-   background-color: #1abc9c;
- }
+  .language-switch {
+    position: static;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
