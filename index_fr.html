@@ -42,6 +42,7 @@
         <a href="index.html">English</a>
         <a href="index_ar.html">العربية</a>
     </div>
+    <div id="menu-container"></div>
     <article>
         <h1>À la recherche de mes origines — une aventure généalogique</h1>
 
@@ -171,6 +172,13 @@
             Kamel El Gazzah, 2025
         </footer>
     </article>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>

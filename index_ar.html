@@ -38,12 +38,6 @@
     <style>
         body {
             font-family: 'Georgia', serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            background: #f9f9f9;
-            color: #222;
             direction: rtl;
             text-align: right;
         }
@@ -95,7 +89,7 @@
         <a href="index.html">English</a>
         <a href="index_ar.html">العربية</a>
     </div>
-
+    <div id="menu-container"></div>
     <article>
         <h1>البحث عن أصولي — رحلة جينية</h1>
 
@@ -193,6 +187,13 @@
             كمال القزّاح، 2025
         </footer>
     </article>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>
