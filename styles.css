@@ -139,6 +139,7 @@ blockquote {
   /* Menu devient bloc en haut */
   .sidebar {
     position: relative;
+    direction: ltr;
     width: 100%;
     height: auto;
     padding: 1rem;
