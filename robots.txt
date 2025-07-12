@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kamelgazzah.github.io/dna/sitemap.xml
