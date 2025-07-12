@@ -163,7 +163,13 @@
     <footer>
         <p>&copy; 2025 Haplo Group Resources. All rights reserved.</p>
     </footer>
-
+<script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>
