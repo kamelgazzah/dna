@@ -85,7 +85,7 @@
  }
 
  /* CORPS DU CONTENU */
- article {
+ article, main {
    margin-left: 240px;
    /* décale le contenu à droite du menu */
    padding: 2rem;
