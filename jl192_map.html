@@ -7,7 +7,38 @@
     <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon">
     <title>J-L192 Map</title>
 
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .responsive-map {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%; /* 4:3 ratio (higher map height) */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      min-height: 400px; /* fallback for small viewports */
+    }
+
+    .responsive-map iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
      <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5R0HK2H98"></script>
   <script>
@@ -21,11 +52,11 @@
 
 <body>
     <div id="menu-container"></div>
-    <main>
+    <div class="responsive-map">
         <iframe src="https://www.google.com/maps/d/embed?mid=1FcDPJMRJMdEO36f1gV3BEXoY-x5rUyJ8&ehbc=2E312F" allowfullscreen
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </main>
+    </div>
     <script>
         fetch('menu.html')
             .then(response => response.text())
