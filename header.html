@@ -1,0 +1,52 @@
+<style>
+  .site-banner {
+    background: linear-gradient(to right, #002f4b, #005f6b);
+    color: white;
+    padding: 15px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .site-title {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  .social-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #ffffff;
+  }
+
+  @media (max-width: 600px) {
+    .site-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .social-links a {
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  }
+</style>
+
+<div class="site-banner">
+  <div class="site-title">🌍 Kamel El Gazzah Web Site</div>
+  <div class="social-links">
+    <a href="https://facebook.com/kmlgzh" target="_blank">Facebook</a>
+    <a href="https://github.com/kamelgazzah" target="_blank">GitHub</a>
+    <a href="mailto:kamelgazzah@email.com">Contact</a>
+  </div>
+</div>
