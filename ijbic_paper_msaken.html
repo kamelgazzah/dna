@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon">
+    <title>Msaken, Tunisia: A Common Paternal Ancestor Confirmed by Y Chromosome DNA Analysis</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .responsive-map {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            /* 4:3 ratio (higher map height) */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+            /* fallback for small viewports */
+        }
+
+        .responsive-map iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5R0HK2H98"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-M5R0HK2H98');
+    </script>
+</head>
+
+<body>
+    <div id="menu-container"></div>
+    <div class="responsive-map">
+        <iframe src="https://researchlakejournals.com/index.php/IJBIC/article/view/292"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>
