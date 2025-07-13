@@ -180,7 +180,7 @@ blockquote {
   }
 
   /* Contenu principal décalé sous header + menu horizontal */
-  article,
+  
   /*main {
     margin-left: 0;
     padding: 1rem;
@@ -190,7 +190,7 @@ blockquote {
     margin-top: calc(var(--header-height) + var(--menu-height-mobile));
     margin-right: 0;
   }*/
-  main {
+  article,main {
     margin-left: var(--sidebar-width);
     /* décalage du menu */
     margin-top: var(--header-height);
