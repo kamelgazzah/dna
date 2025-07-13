@@ -6,7 +6,8 @@
 
 /* Base structure */
 body {
-  padding: 0;  /* Retirer padding pour tester */
+  padding: 0;
+  /* Retirer padding pour tester */
   margin: 0 auto;
   max-width: 100%;
   display: flex;
@@ -15,13 +16,15 @@ body {
 }
 
 /* Contenu principal */
-main, article {
+main,
+article {
   margin-left: 240px;
   padding: 2rem;
   margin-top: var(--header-height);
   margin-bottom: 2rem;
   max-width: calc(100vw - 240px);
 }
+
 /* Menu latéral */
 #sidebar {
   position: fixed;
@@ -77,7 +80,8 @@ main, article {
 header,
 main {
   flex: 1 0 auto;
-  padding-left: 240px;         /* même largeur que sidebar */
+  padding-left: 240px;
+  /* même largeur que sidebar */
   padding-right: 1rem;
   margin-top: var(--header-height);
 }
@@ -177,7 +181,7 @@ blockquote {
 
   /* Contenu principal décalé sous header + menu horizontal */
   article,
-  main {
+  /*main {
     margin-left: 0;
     padding: 1rem;
     max-width: 100%;
@@ -185,6 +189,15 @@ blockquote {
     padding-right: 1rem;
     margin-top: calc(var(--header-height) + var(--menu-height-mobile));
     margin-right: 0;
+  }*/
+  main {
+    margin-left: var(--sidebar-width);
+    /* décalage du menu */
+    margin-top: var(--header-height);
+    padding: 2rem;
+    max-width: calc(100vw - var(--sidebar-width) - 4rem);
+    /* largeur responsive */
+    box-sizing: border-box;
   }
 
   header,
