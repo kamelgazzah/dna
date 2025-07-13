@@ -1,47 +1,50 @@
 :root {
   --header-height: 60px;
   --menu-height-mobile: 50px;
-  /* ajustez selon la hauteur réelle de votre menu horizontal mobile */
+  --sidebar-width: 240px;
 }
 
-/* Base structure */
+/* ------------------------
+    🎯 Base Structure
+------------------------- */
 body {
-  padding: 0;
-  /* Retirer padding pour tester */
   margin: 0 auto;
   max-width: 100%;
+  padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Contenu principal */
 main,
 article {
-  margin-left: 240px;
-  padding: 2rem;
+  margin-left: var(--sidebar-width);
   margin-top: var(--header-height);
   margin-bottom: 2rem;
-  max-width: calc(100vw - 240px);
+  padding: 2rem;
+  max-width: calc(100vw - var(--sidebar-width));
+  box-sizing: border-box;
 }
 
-/* Menu latéral */
+/* ------------------------
+    🧭 Sidebar Menu
+------------------------- */
 #sidebar {
   position: fixed;
   top: var(--header-height);
   left: 0;
-  width: 220px;
+  width: var(--sidebar-width);
   height: calc(100% - var(--header-height));
   background-color: #2c3e50;
+  color: #ecf0f1;
   padding-top: 1rem;
+  overflow-y: auto;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   z-index: 900;
-  color: #ecf0f1;
-  overflow-y: auto;
 }
 
 #sidebar h2 {
-  color: #ecf0f1;
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.2rem;
@@ -59,7 +62,9 @@ article {
   background-color: #1abc9c;
 }
 
-/* Header */
+/* ------------------------
+    🔝 Header
+------------------------- */
 #header {
   position: fixed;
   top: 0;
@@ -67,36 +72,39 @@ article {
   right: 0;
   height: var(--header-height);
   background-color: #004466;
-  z-index: 1000;
+  color: white;
   display: flex;
   align-items: center;
   padding: 0 20px;
-  color: white;
   font-weight: bold;
   font-size: 1.2rem;
+  z-index: 1000;
 }
 
-/* Header + main = contenu flexible */
+/* ------------------------
+    📄 Main & Footer
+------------------------- */
 header,
 main {
   flex: 1 0 auto;
-  padding-left: 240px;
-  /* même largeur que sidebar */
+  padding-left: var(--sidebar-width);
   padding-right: 1rem;
   margin-top: var(--header-height);
 }
 
-/* Footer */
 footer {
   flex-shrink: 0;
   background-color: #ecf0f1;
   color: #555;
   text-align: center;
   padding: 1.5rem;
-  margin-top: 3rem;
   font-size: 0.9rem;
+  margin-top: 3rem;
 }
 
+/* ------------------------
+    📝 Typography
+------------------------- */
 h1,
 h2 {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
@@ -116,8 +124,8 @@ h2 {
 }
 
 p {
-  margin-bottom: 1.3rem;
   font-size: 1.1rem;
+  margin-bottom: 1.3rem;
 }
 
 blockquote {
@@ -129,7 +137,9 @@ blockquote {
   background: #f0f0f0;
 }
 
-/* Langue switcher */
+/* ------------------------
+    🌐 Language Switch
+------------------------- */
 .language-switch {
   position: absolute;
   top: 1rem;
@@ -147,30 +157,24 @@ blockquote {
   text-decoration: underline;
 }
 
-/* ------------------------------------
-   ✅ Responsive Design (Mobile/Tablet)
-------------------------------------- */
+/* ------------------------
+    📱 Responsive Design
+------------------------- */
 @media (max-width: 768px) {
-
-  /* Body en colonne */
   body {
     flex-direction: column;
   }
 
-  /* Menu horizontal sous header */
   #sidebar {
-    position: fixed;
     top: var(--header-height);
-    left: 0;
     width: 100%;
     height: var(--menu-height-mobile);
-    background-color: #2c3e50;
-    padding: 0.5rem 0;
-    box-shadow: none;
+    position: fixed;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    overflow: visible;
+    padding: 0.5rem 0;
+    box-shadow: none;
   }
 
   #sidebar a {
@@ -179,37 +183,25 @@ blockquote {
     font-size: 1rem;
   }
 
-  /* Contenu principal décalé sous header + menu horizontal */
-  
-  /*main {
-    margin-left: 0;
-    padding: 1rem;
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: calc(var(--header-height) + var(--menu-height-mobile));
-    margin-right: 0;
-  }*/
-  article,main {
-    margin-left: var(--sidebar-width);
-    /* décalage du menu */
-    margin-top: var(--header-height);
-    padding: 2rem;
-    max-width: calc(100vw - var(--sidebar-width) - 4rem);
-    /* largeur responsive */
-    box-sizing: border-box;
-  }
-
   header,
-  main {
+  main,
+  article {
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-left: 0;
+    margin-top: calc(var(--header-height) + var(--menu-height-mobile));
+    max-width: 100%;
   }
 
-  /* Langue switcher centré */
   .language-switch {
     position: static;
     text-align: center;
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5em;
   }
 }
