@@ -36,7 +36,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>البحث عن أصولي — رحلة جينية</title>
     <link rel="stylesheet" href="styles.css" />
-    
+
 </head>
 
 <body>
@@ -50,7 +50,7 @@
         <h1>البحث عن أصولي — رحلة جينية</h1>
 
         <p>
-            في عام 2008، بعيدًا عن تونس، في الصين  حيث كنت أعمل، حدث لقاء غير متوقع كان بداية رحلة استمرت
+            في عام 2008، بعيدًا عن تونس، في الصين حيث كنت أعمل، حدث لقاء غير متوقع كان بداية رحلة استمرت
             أكثر من عقد من الزمن. مجلة بسيطة، <em>ناشونال جيوغرافيك</em>، موضوعة على طاولة فندق، أعطتني مرآة إلى الماضي.
         </p>
 
@@ -149,13 +149,14 @@
             .then(data => {
                 document.getElementById('sidebar').innerHTML = data;
             });
-    </script>
-    fetch("header.html")
+        fetch("header.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("header").innerHTML = data;
             })
             .catch(error => console.error("Erreur chargement du header :", error));
+    </script>
+
 </body>
 
 </html>

@@ -65,13 +65,14 @@
             .then(data => {
                 document.getElementById('sidebar').innerHTML = data;
             });
-    </script>
-    fetch("header.html")
+        fetch("header.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("header").innerHTML = data;
             })
             .catch(error => console.error("Erreur chargement du header :", error));
+    </script>
+
 </body>
 
 </html>
