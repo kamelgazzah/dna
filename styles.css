@@ -1,7 +1,6 @@
 :root {
   --header-height: 60px;
-  --menu-height-mobile: 50px;
-  /* ajustez selon la hauteur réelle de votre menu horizontal mobile */
+  --menu-height-mobile: 50px; /* ajuste selon ta hauteur réelle */
 }
 
 /* Base structure */
@@ -23,26 +22,21 @@ body {
 }
 
 /* Contenu décalé à droite sur desktop */
-/* Contenu principal */
 article,
 main {
-  margin-left: 240px;
-  /* pour desktop */
+  margin-left: 240px; /* pour desktop */
   padding: 2rem;
   max-width: 900px;
-  margin-top: var(--header-height);
-  /* décale sous header desktop */
+  margin-top: var(--header-height); /* décale sous header desktop */
 }
-
 
 /* Menu latéral */
 #sidebar {
   position: fixed;
-  top: 60px;
-  /* hauteur du header */
+  top: var(--header-height);
   left: 0;
   width: 220px;
-  height: calc(100% - 60px);
+  height: calc(100% - var(--header-height));
   background-color: #2c3e50;
   padding-top: 1rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -76,7 +70,7 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: var(--header-height);
   background-color: #004466;
   z-index: 1000;
   display: flex;
@@ -91,11 +85,9 @@ main {
 header,
 main {
   flex: 1 0 auto;
-  padding-left: 240px;
-  /* même largeur que sidebar */
+  padding-left: 240px; /* même largeur que sidebar */
   padding-right: 1rem;
-  margin-top: 60px;
-  /* pour ne pas être caché par header */
+  margin-top: var(--header-height); /* pour ne pas être caché par header */
 }
 
 /* Footer */
@@ -169,30 +161,13 @@ blockquote {
     flex-direction: column;
   }
 
-  /* Menu horizontal sous header */
+  /* Sidebar devient menu horizontal sous header */
   #sidebar {
     position: fixed;
     top: var(--header-height);
     left: 0;
     width: 100%;
     height: var(--menu-height-mobile);
-    background-color: #2c3e50;
-    padding: 0.5rem 0;
-    box-shadow: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    overflow: visible;
-  }
-
-  /* Sidebar devient menu horizontal sous header */
-  #sidebar {
-    position: fixed;
-    top: 60px;
-    /* juste sous header */
-    left: 0;
-    width: 100%;
-    height: auto;
     background-color: #2c3e50;
     padding: 0.5rem 0;
     box-shadow: none;
