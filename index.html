@@ -14,13 +14,8 @@
     <link rel="canonical" href="https://kamelgazzah.github.io/dna/index.html">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5R0HK2H98"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-M5R0HK2H98');
-    </script>
+    <script src="js/analytics.js"></script>
+    <script src="js/scripts.js"></script>
     <style>
         body {
             font-family: "Arial", sans-serif;
@@ -92,23 +87,13 @@
         </footer>
     </article>
     <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('sidebar').innerHTML = data;
-            });
-
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header").innerHTML = data;
-            })
-            .catch(error => console.error("Erreur chargement du header :", error));
+        menu();
     </script>
     <div>
         <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="869c91d3-2821-493b-bece-5885e4f4b59b"
-        data-page-id="index" data-page-url="https://kamelgazzah.github.io/origines/index.html" data-page-title="Unfinished Searches"></div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+            data-page-id="index" data-page-url="https://kamelgazzah.github.io/origines/index.html"
+            data-page-title="Unfinished Searches"></div>
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
     </div>
 </body>
