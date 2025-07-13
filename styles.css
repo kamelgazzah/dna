@@ -126,6 +126,35 @@ blockquote {
   text-decoration: underline;
 }
 
+#menu-container .menu-vertical {
+  position: fixed;
+  /* ou absolute */
+  top: 60px;
+  /* descend de la hauteur du menu horizontal */
+  left: 0;
+  width: 200px;
+  /* largeur du menu vertical */
+  z-index: 900;
+  /* inférieur au menu horizontal */
+  background-color: #003344;
+  height: calc(100% - 60px);
+  /* occupe la hauteur restante */
+  overflow-y: auto;
+  /* scroll si contenu long */
+}
+
+#header .menu-horizontal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+  background-color: #004466;
+}
+
+
+
 /* ------------------------------------
    ✅ Responsive Design (Mobile/Tablet)
 ------------------------------------- */
