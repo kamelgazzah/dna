@@ -135,6 +135,7 @@ blockquote {
   background-color: #003344;
   overflow-y: auto;
   z-index: 900;
+  padding-top: 80px;;
 }
 
 #header {
