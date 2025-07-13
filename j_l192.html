@@ -38,7 +38,7 @@
 <body>
 
 
-    <div id="menu-container"></div>
+    <div id="sidebar"></div>
     <main>
         <h1>J-L192 Haplogroup Resources</h1>
         <p>Explore essential links and communities for the J-L192 Y-DNA haplogroup</p>
@@ -111,7 +111,7 @@
         fetch('menu.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
+                document.getElementById('sidebar').innerHTML = data;
             });
     </script>
 </body>

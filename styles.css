@@ -126,31 +126,25 @@ blockquote {
   text-decoration: underline;
 }
 
-#menu-container .menu-vertical {
+#sidebar {
   position: fixed;
-  /* ou absolute */
-  top: 60px;
-  /* descend de la hauteur du menu horizontal */
+  top: 60px; /* exactement la même hauteur que le header */
   left: 0;
   width: 200px;
-  /* largeur du menu vertical */
-  z-index: 900;
-  /* inférieur au menu horizontal */
-  background-color: #003344;
   height: calc(100% - 60px);
-  /* occupe la hauteur restante */
+  background-color: #003344;
   overflow-y: auto;
-  /* scroll si contenu long */
+  z-index: 900;
 }
 
-#header .menu-horizontal {
+#header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
-  z-index: 1000;
   background-color: #004466;
+  z-index: 1000;
 }
 
 

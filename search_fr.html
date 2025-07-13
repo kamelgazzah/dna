@@ -43,7 +43,7 @@
         <a href="search_en.html">English</a>
         <a href="search_ar.html">العربية</a>
     </div>
-    <div id="menu-container"></div>
+    <div id="sidebar"></div>
     <article>
         <h1>À la recherche de mes origines — une aventure généalogique</h1>
 
@@ -177,7 +177,7 @@
         fetch('menu.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
+                document.getElementById('sidebar').innerHTML = data;
             });
     </script>
 </body>

@@ -52,7 +52,7 @@
 </head>
 
 <body>
-    <div id="menu-container"></div>
+    <div id="sidebar"></div>
     <div id="header"></div>
     <article style="direction: rtl;">
         <h1>بحث لا ينتهي...</h1>
@@ -95,7 +95,7 @@
         fetch('menu.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
+                document.getElementById('sidebar').innerHTML = data;
             });
 
         fetch("header.html")

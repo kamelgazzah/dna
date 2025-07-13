@@ -44,7 +44,7 @@
         <a href="search_en.html">English</a>
         <a href="search_fr.html">Français</a>
     </div>
-    <div id="menu-container"></div>
+    <div id="sidebar"></div>
     <article style="direction: rtl;">
         <h1>البحث عن أصولي — رحلة جينية</h1>
 
@@ -146,7 +146,7 @@
         fetch('menu.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
+                document.getElementById('sidebar').innerHTML = data;
             });
     </script>
 </body>
