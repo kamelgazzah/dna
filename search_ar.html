@@ -45,6 +45,7 @@
         <a href="search_fr.html">Français</a>
     </div>
     <div id="sidebar"></div>
+    <div id="header"></div>
     <article style="direction: rtl;">
         <h1>البحث عن أصولي — رحلة جينية</h1>
 
@@ -149,6 +150,12 @@
                 document.getElementById('sidebar').innerHTML = data;
             });
     </script>
+    fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error("Erreur chargement du header :", error));
 </body>
 
 </html>

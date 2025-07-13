@@ -39,6 +39,7 @@
 
 
     <div id="sidebar"></div>
+    <div id="header"></div>
     <main>
         <h1>J-L192 Haplogroup Resources</h1>
         <p>Explore essential links and communities for the J-L192 Y-DNA haplogroup</p>
@@ -114,6 +115,12 @@
                 document.getElementById('sidebar').innerHTML = data;
             });
     </script>
+    fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error("Erreur chargement du header :", error));
 </body>
 
 </html>

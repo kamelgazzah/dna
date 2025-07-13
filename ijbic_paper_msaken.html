@@ -9,6 +9,7 @@
 </head>
 <body>
   <div id="sidebar"></div>
+  <div id="header"></div>
   <div class="main-content">
     <div class="responsive-map">
       <iframe src="https://researchlakejournals.com/index.php/IJBIC/article/view/292"
@@ -22,6 +23,12 @@
       .then(data => {
         document.getElementById('sidebar').innerHTML = data;
       });
+      fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error("Erreur chargement du header :", error));
   </script>
 </body>
 </html>

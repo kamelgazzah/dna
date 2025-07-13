@@ -46,6 +46,7 @@
 
 <body>
     <div id="sidebar"></div>
+    <div id="header"></div>
     <article>
         <h1>Une découverte génétique fascinante : un lien entre la Chine et la Tunisie il y a plus de 3 000 ans</h1>
 
@@ -152,5 +153,11 @@
             document.getElementById('sidebar').innerHTML = data;
         });
 </script>
+fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error("Erreur chargement du header :", error));
 
 </html>

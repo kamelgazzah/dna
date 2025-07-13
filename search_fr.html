@@ -44,6 +44,7 @@
         <a href="search_ar.html">العربية</a>
     </div>
     <div id="sidebar"></div>
+    <div id="header"></div>
     <article>
         <h1>À la recherche de mes origines — une aventure généalogique</h1>
 
@@ -180,6 +181,12 @@
                 document.getElementById('sidebar').innerHTML = data;
             });
     </script>
+    fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error("Erreur chargement du header :", error));
 </body>
 
 </html>
