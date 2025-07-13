@@ -17,6 +17,59 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
+
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  background: #004f6e;
+  color: white;
+}
+
+header h1 {
+  margin: 0.2em 0;
+  font-size: 2em;
+}
+
+nav {
+  background-color: #e0f0f5;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  color: #004f6e;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #c30b54;
+}
+
+
+nav ul {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+
 main,
 article {
   margin-left: var(--sidebar-width);
@@ -200,8 +253,5 @@ blockquote {
   }
 }
 
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5em;
-  }
+
 }
