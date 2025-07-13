@@ -1,70 +1,82 @@
 <html>
-
 <head>
-    <meta name="robots" content="index, follow">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon_io/favicon.ico" type="image/x-icon">
-    <title>Msaken, Tunisia: A Common Paternal Ancestor Confirmed by Y Chromosome DNA Analysis</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 1rem;
-        }
-
-        .responsive-map {
-            position: relative;
-            width: 100%;
-            padding-bottom: 75%;
-            /* 4:3 ratio (higher map height) */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            min-height: 400px;
-            /* fallback for small viewports */
-        }
-
-        .responsive-map iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5R0HK2H98"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-M5R0HK2H98');
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Msaken, Tunisia: A Common Paternal Ancestor Confirmed by Y Chromosome DNA Analysis</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Menu sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100vh;
+      background-color: #f0f0f0;
+      padding-top: 1rem;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .sidebar a {
+      display: block;
+      padding: 12px 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      border-left: 4px solid transparent;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #ddd;
+      border-left-color: #007acc;
+      color: #007acc;
+    }
+    /* Contenu décalé à droite */
+    .main-content {
+      margin-left: 220px;
+      padding: 1rem;
+    }
+    /* Responsive map container */
+    .responsive-map {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      min-height: 400px;
+    }
+    .responsive-map iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
 </head>
-
 <body>
-    <div id="menu-container"></div>
+  <div id="menu-container"></div>
+  <div class="main-content">
     <div class="responsive-map">
-        <iframe src="https://researchlakejournals.com/index.php/IJBIC/article/view/292"
-            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://researchlakejournals.com/index.php/IJBIC/article/view/292"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
-            });
-    </script>
-</body>
+  </div>
 
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+      });
+  </script>
+</body>
 </html>
