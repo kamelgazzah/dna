@@ -147,7 +147,7 @@ blockquote {
     flex-direction: column;
   }
 
-  header h1,
+  header ,
   header p {
     color: #ffffff;
   }
