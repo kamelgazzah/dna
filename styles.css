@@ -5,39 +5,23 @@
 }
 
 /* Base structure */
-html,
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.8;
-  padding: 40px;
-  max-width: 800px;
-  margin: auto;
-}
-
-body {
+  padding: 0;  /* Retirer padding pour tester */
+  margin: 0 auto;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
 }
 
 /* Contenu principal */
-article,
-main {
-  margin-left: 240px;          /* espace pour la sidebar */
-  margin-right: auto;          /* pousse la marge droite pour centrer */
+main, article {
+  margin-left: 240px;
   padding: 2rem;
-  max-width: 900px;            /* limite la largeur max */
   margin-top: var(--header-height);
-  /* optionnel, si tu veux espacer en bas */
   margin-bottom: 2rem;
+  max-width: calc(100vw - 240px);
 }
-
 /* Menu latéral */
 #sidebar {
   position: fixed;
