@@ -51,7 +51,7 @@
     <a href="search_fr.html">Français</a>
     <a href="search_ar.html">العربية</a>
   </div>
-  <div id="sidebar"></div>
+ 
   <div id="header"></div>
   <article>
     <h1>Searching for My Origins — A Genealogical Journey</h1>
@@ -161,18 +161,8 @@
     </footer>
   </article>
   <script>
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('sidebar').innerHTML = data;
-      });
-      fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header").innerHTML = data;
-            })
-            .catch(error => console.error("Erreur chargement du header :", error));
-  </script>
+        menu();
+    </script>
   
 </body>
 

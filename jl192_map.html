@@ -53,26 +53,15 @@
 </head>
 
 <body>
-    <div id="sidebar"></div>
+    
     <div id="header"></div>
     <div class="responsive-map">
         <iframe src="https://www.google.com/maps/d/embed?mid=1FcDPJMRJMdEO36f1gV3BEXoY-x5rUyJ8&ehbc=2E312F"
             allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('sidebar').innerHTML = data;
-            });
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header").innerHTML = data;
-            })
-            .catch(error => console.error("Erreur chargement du header :", error));
+        menu();
     </script>
-
 </body>
 
 </html>

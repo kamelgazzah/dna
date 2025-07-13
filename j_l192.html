@@ -68,7 +68,7 @@
 <body>
 
 
-    <div id="sidebar"></div>
+    
     <div id="header"></div>
     <main>
         <h1>Links and Resources</h1>
@@ -137,17 +137,7 @@
         <p>&copy; 2025 J-L192 Haplogroup Resources. All rights reserved.</p>
     </footer>
     <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('sidebar').innerHTML = data;
-            });
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header").innerHTML = data;
-            })
-            .catch(error => console.error("Erreur chargement du header :", error));
+        menu();
     </script>
 
 </body>
