@@ -62,6 +62,29 @@ nav a:hover {
   color: #c30b54;
 }
 
+/* 🎯 Zone des commentaires Cusdis */
+#cusdis_thread {
+  width: 100%;
+  max-width: 100%;
+  min-height: 400px;
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 2rem auto 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* 📱 Responsive pour mobile */
+@media (max-width: 768px) {
+  #cusdis_thread {
+    padding: 0.75rem;
+    min-height: 300px;
+    margin-top: 1.5rem;
+  }
+}
+
+
 /* ------------------------
     📄 Main & Footer
 ------------------------- */
@@ -89,12 +112,12 @@ footer {
 ------------------------- */
 h1,
 h2 {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;  
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
   margin-bottom: 0.5rem;
 }
 
 h1 {
-  font-size: 2.4rem;  
+  font-size: 2.4rem;
   padding-bottom: 0.3rem;
 }
 
@@ -145,7 +168,7 @@ blockquote {
     flex-direction: column;
   }
 
-  header ,
+  header,
   header p {
     color: #ffffff;
   }
