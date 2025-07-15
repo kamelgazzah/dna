@@ -101,10 +101,16 @@
       padding: 10px 0;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 10;
-      min-width: 150px;
+      min-width: 200px;
     }
 
-    .menu a {
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li a {
       text-decoration: none;
       padding: 10px 20px;
       color: #333;
@@ -112,7 +118,7 @@
       transition: background 0.3s;
     }
 
-    .menu a:hover {
+    .menu li a:hover {
       background-color: #f0f0f0;
     }
 
@@ -139,11 +145,14 @@
       </g>
     </svg>
 
-    <div class="menu">      
-      <li><a href="search_en.html">Searching for My Origins</a></li>
-      <li><a href="j_l192.html">J-L192 Resources</a></li>
-      <li><a href="jl192_map.html">J-L192 Map</a></li>
-      <li><a href="salar_en.html">Msaken–China Connection</a></li>
+    <!-- MENU -->
+    <div class="menu">
+      <ul>
+        <li><a href="search_en.html">Searching for My Origins</a></li>
+        <li><a href="j_l192.html">J-L192 Resources</a></li>
+        <li><a href="jl192_map.html">J-L192 Map</a></li>
+        <li><a href="salar_en.html">Msaken–China Connection</a></li>
+      </ul>
     </div>
   </div>
 
@@ -167,6 +176,11 @@
     // Clic en dehors → ferme le menu
     document.body.addEventListener("click", function () {
       container.classList.remove("active");
+    });
+
+    // Empêche fermeture quand on clique dans le menu
+    document.querySelector('.menu').addEventListener('click', function (e) {
+      e.stopPropagation();
     });
   </script>
 </body>
