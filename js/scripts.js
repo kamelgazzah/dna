@@ -1,5 +1,5 @@
 const menu = () => {
-    fetch('../menu/menu.html')
+    fetch('/dna/menu/menu.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('menu').innerHTML = data;
