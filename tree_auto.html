@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arbre généalogique</title>
+
+    <!-- Treant.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        #tree {
+            width: 100%;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .node {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #999;
+            background: #fff;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.2s ease;
+        }
+
+        .node:hover {
+            transform: scale(1.05);
+            background: #e3f2fd;
+            cursor: pointer;
+        }
+
+        .popup-person {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #888;
+            border-radius: 8px;
+            padding: 10px 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            min-width: 180px;
+            z-index: 9999;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .popup-person h3 {
+            margin: 0 0 6px 0;
+            font-size: 16px;
+            color: #222;
+        }
+
+        .popup-person .close-btn {
+            float: right;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .popup-person .close-btn:hover {
+            color: #000;
+        }
+
+        .male {
+            border-color: #007bff;
+            background-color: #eaedf0;
+        }
+
+        .female {
+            border-color: #e83e8c;
+            background-color: rgb(239, 233, 234);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tree"></div>
+    <script src="data.js"></script>
+    <script>
+        function closePopup() {
+            const old = document.querySelector('.popup-person');
+            if (old) old.remove();
+        }
+
+        // ✅ Fonction popup réutilisable
+        function showPersonPopup(person, event) {
+            closePopup(); // Ferme toute popup précédente
+
+            const popup = document.createElement('div');
+            popup.className = 'popup-person';
+
+            // Contenu HTML de la popup
+            popup.innerHTML = `
+      <div class="close-btn" onclick="closePopup()">✖</div>
+      <h3>${person.nom}</h3>
+      <div><strong>ID:</strong> ${person.id}</div>
+      <div><strong>Genre:</strong> ${person.genre === 'M' ? 'Homme' : 'Femme'}</div>
+      <div><strong>Père:</strong> ${person.id_pere ?? 'Aucun'}</div>
+    `;
+
+            // Positionner près du clic
+            popup.style.left = (event.pageX + 10) + 'px';
+            popup.style.top = (event.pageY + 10) + 'px';
+
+            document.body.appendChild(popup);
+
+            // Fermer si on clique ailleurs
+            document.addEventListener('click', function handler(e) {
+                if (!popup.contains(e.target)) {
+                    closePopup();
+                    document.removeEventListener('click', handler);
+                }
+            });
+        }
+
+
+        const rootId = data.find(p => p.id_pere === null)?.id;
+
+        // Fonction récursive pour construire la structure Treant
+        function buildTree(rootId) {
+            const root = data.find(p => p.id === rootId);
+            if (!root) return null;
+            const children = data.filter(p => p.id_pere === root.id);
+            return {
+                text: { name: root.nom },
+                HTMLclass: root.genre === "M" ? "node male" : "node female",
+                HTMLid: "node-" + root.id,
+                children: children.map(c => buildTree(c.id))
+            };
+        }
+
+        const chart_config = {
+            chart: {
+                container: "#tree",
+                rootOrientation: "NORTH", // chaque génération sur une ligne
+                connectors: { type: "step" },
+                nodeAlign: "CENTER",
+                levelSeparation: 80,
+                siblingSeparation: 5,
+                subTeeSeparation: 50,
+                animateOnInit: false,
+                callback: {
+                    onTreeLoaded: () => {
+                        // Actions au clic
+                        data.forEach(p => {
+                            const el = document.getElementById("node-" + p.id);
+                            if (el) {
+                                el.addEventListener('click', e => {
+                                    e.stopPropagation();
+                                    showPersonPopup(p, e); // ✅ ta fonction popup personnalisée
+                                });
+                            }
+                        });
+                    }
+                }
+            },
+            nodeStructure: buildTree(rootId)
+        };
+
+        new Treant(chart_config);
+    </script>
+</body>
+
+</html>
