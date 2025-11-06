@@ -95,14 +95,20 @@
 
             const popup = document.createElement('div');
             popup.className = 'popup-person';
+            // Trouver l'objet père
+            const pere = data.find(p => p.id === person.id_pere);
+            // Trouver l'objet grand-père à partir du père
+            const grandpere = pere ? data.find(p => p.id === pere.id_pere) : null;
 
             // Contenu HTML de la popup
             popup.innerHTML = `
       <div class="close-btn" onclick="closePopup()">✖</div>
       <h3>${person.nom}</h3>
       <div><strong>ID:</strong> ${person.id}</div>
-      <div><strong>Genre:</strong> ${person.genre === 'M' ? 'Homme' : 'Femme'}</div>
-      <div><strong>Père:</strong> ${person.id_pere ?? 'Aucun'}</div>
+      <div><strong></strong> ${person.genre === 'M' ? 'رجل' : 'امرأة'}</div>
+      <div><strong>الأب:</strong> ${pere ? pere.nom : 'حسن القزاح'}</div>
+      <div><strong>الجدّ:</strong> ${grandpere ? grandpere.nom : 'القزّاح'}</div>
+        ${person.photourl ? `<div style="margin-top:8px;"><img src="${person.photourl}" alt="${person.nom}" style="max-width:150px; border-radius:4px;"></div>` : ''}    
     `;
 
             // Positionner près du clic

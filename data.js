@@ -1227,6 +1227,7 @@ const data = [
         "id": 7946446,
         "nom": "ﻛﻤﺎﻝ",
         "genre": "M",
+        "photourl":"https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-6/576376142_10163382822794324_3790139953919389208_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QnK458DpvAAQ7kNvwHPzB7A&_nc_oc=AdlQEaTu15QI63c2XHe5JEasNDDdvwcQgQfs8ji-YdMUjg3ceY9KKfhceY9X40qhT2I&_nc_zt=23&_nc_ht=scontent.ftun1-2.fna&_nc_gid=wb8siFRsIIoQDNjWzCOm0g&oh=00_Afg3o4zt98O3RsWtzVBbyjbBvdGtIHs1nLnW2mx0VQdn6A&oe=6912A8CA",
         "id_pere": 70
     },
     {
@@ -1245,7 +1246,8 @@ const data = [
         "id": 8057461,
         "nom": "ﺣﺒﻴﺐ",
         "genre": "M",
-        "id_pere": 70
+        "id_pere": 70,
+        "photourl":"https://scontent.ftun1-2.fna.fbcdn.net/v/t39.30808-1/271208499_4968774073167182_3632492619471441105_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e99d92&_nc_ohc=8aIf0t0Q8FgQ7kNvwFzW42y&_nc_oc=AdkXWA-o6mx2-PPvrstW6ORtGRZS1Mz-Fh4D3G_61ZNArDKBysItx0n2MweizcUhu3M&_nc_zt=24&_nc_ht=scontent.ftun1-2.fna&_nc_gid=Eqt0pIKpCIzEr-UXPA2TaA&oh=00_AfjrhSoWUUiL-iSQHq8CKOHYZHJ-xh3xDTe0Q-yQVXoTyw&oe=6912B3B5"
     },
     {
         "id": 4655066,
@@ -1774,6 +1776,7 @@ const data = [
         "nom": "ﻋﺒﻴﺮ",
         "genre": "F",
         "id_pere": 8057461
+       
     },
     {
         "id": 3267776,
