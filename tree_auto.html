@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Arbre généalogique</title>
-
-    <!-- Treant.js -->
+    <title>Gazzah Family, Msaken, Genealogy Tree</title>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
@@ -120,8 +118,8 @@
       <h3>${person.nom}</h3>
       <div><strong>ID:</strong> ${person.id}</div>
       <div><strong></strong> ${person.genre === 'M' ? 'رجل' : 'امرأة'}</div>
-      <div><strong>الأب:</strong> ${pere ? pere.nom : 'حسن القزاح'}</div>
-      <div><strong>الجدّ:</strong> ${grandpere ? grandpere.nom : 'القزّاح'}</div>
+      <div><strong>الأب:</strong> ${pere ? pere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
+      <div><strong>الجدّ:</strong> ${grandpere ? grandpere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
         ${person.photourl ? `<div style="margin-top:8px;"><img src="${person.photourl}" alt="${person.nom}" style="max-width:150px; border-radius:4px;"></div>` : ''}    
     `;
 
@@ -164,7 +162,7 @@
                 nodeAlign: "CENTER",
                 levelSeparation: 80,
                 siblingSeparation: 5,
-                subTeeSeparation: 50,
+                subTeeSeparation: 40,
                 animateOnInit: false,
                 callback: {
                     onTreeLoaded: () => {
