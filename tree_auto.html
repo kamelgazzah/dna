@@ -24,13 +24,26 @@
         }
 
         .node {
-            padding: 8px 12px;
+            width: 150px;
+            /* largeur fixe */
+            height: 60px;
+            /* hauteur fixe */
+            padding: 5px;
             border-radius: 8px;
             border: 1px solid #999;
             background: #fff;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* cache le texte qui dépasse */
+            white-space: nowrap;
+            /* empêche le retour à la ligne */
+            text-overflow: ellipsis;
+            /* ajoute "..." si le texte est trop long */
         }
 
         .node:hover {
@@ -38,6 +51,7 @@
             background: #e3f2fd;
             cursor: pointer;
         }
+
 
         .popup-person {
             position: absolute;
