@@ -311,8 +311,7 @@ const data = [
     { "id": 7917195, "nom": "ﻣﺤﻤﺪ ﺍﻟﻤﻬﺪﻱ", "genre": "M", "id_pere": 145, "photourl": "" },
     { "id": 7944266, "nom": "ﺍﺳﻜﻨﺪﺭ", "genre": "M", "id_pere": 145, "photourl": "" },
     { "id": 7944430, "nom": "ﻣﻨﻰ", "genre": "F", "id_pere": 145, "photourl": "" },
-    { "id": 7944598, "nom": "ﺷﻴﺮﺍﺯ", "genre": "F", "id_pere": 145, "photourl": "" },
-    { "id": 8111651, "nom": "ﺍﻟﻴﺴﺔ ﺭﻗﻴﺔ", "genre": "F", "id_pere": 145, "photourl": "" },
+    { "id": 9621895, "nom": "نورالدين", "genre": "M", "id_pere": 145, "photourl": "" },
     { "id": 7895136, "nom": "ﺍﻟﺤﺒﻴﺐ", "genre": "M", "id_pere": 147, "photourl": "" },
     { "id": 7904000, "nom": "ﺳﻤﻴﺮ", "genre": "M", "id_pere": 147, "photourl": "" },
     { "id": 7943557, "nom": "ﻣﺤﻤﺪ", "genre": "M", "id_pere": 147, "photourl": "" },
@@ -469,5 +468,7 @@ const data = [
     { "id": 7909163, "nom": "ﻫﻴﺜﻢ", "genre": "M", "id_pere": 9621873, "photourl": "" },
     { "id": 7909941, "nom": "ﻣﻬﻨﺪ", "genre": "M", "id_pere": 9621873, "photourl": "" },
     { "id": 7910305, "nom": "ﺍﻟﻴﺎﺱ", "genre": "M", "id_pere": 9621873, "photourl": "" },
+    { "id": 7963270, "nom": "ﻫﺎﻟﺔ", "genre": "F", "id_pere": 9621873, "photourl": "" },
     { "id": 7963270, "nom": "ﻫﺎﻟﺔ", "genre": "F", "id_pere": 9621873, "photourl": "" }
+
 ];
