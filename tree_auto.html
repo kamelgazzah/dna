@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Gazzah Family, Msaken, Genealogy Tree</title>
+    <title>Msaken Family Tree, Tunisia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <div class="header">
+        <h1>شجرة عائلات أهل القصور الخمسة، مساكن</h1>
+        <p>Msaken Family Tree,  Tunisia</p>
     <div id="tree"></div>
     <script src="data.js"></script>
     <script>
@@ -32,14 +35,13 @@
 
             // Contenu HTML de la popup
             popup.innerHTML = `
-      <div class="close-btn" onclick="closePopup()">✖</div>
-      <h3>${person.nom}</h3>
-      <div><strong>ID:</strong> ${person.id}</div>
-      <div><strong></strong> ${person.genre === 'M' ? 'رجل' : 'امرأة'}</div>
-      <div><strong>الأب:</strong> ${pere ? pere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
-      <div><strong>الجدّ:</strong> ${grandpere ? grandpere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
-        ${person.photourl ? `<div style="margin-top:8px;"><img src="${person.photourl}" alt="${person.nom}" style="max-width:150px; border-radius:4px;"></div>` : ''}    
-    `;
+                <div class="close-btn" onclick="closePopup()">✖</div>
+                <h3>${person.nom}</h3>
+                <div><strong>ID:</strong> ${person.id}</div>
+                <div><strong></strong> ${person.genre === 'M' ? 'رجل' : 'امرأة'}</div>
+                <div><strong>الأب:</strong> ${pere ? pere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
+                <div><strong>الجدّ:</strong> ${grandpere ? grandpere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
+                ${person.photourl ? `<div style="margin-top:8px;"><img src="${person.photourl}" alt="${person.nom}" style="max-width:150px; border-radius:4px;"></div>` : ''}`;
 
             // Positionner près du clic
             popup.style.left = (event.pageX + 10) + 'px';
@@ -111,6 +113,19 @@
         };
 
         new Treant(chart_config);
+        // ✅ Ajuster la largeur des nœuds selon le texte
+        document.querySelectorAll('.node').forEach(node => {
+            const text = node.textContent.trim();
+            //console.log('text:',node.textContent+'---length:',text.length);
+            if (text.length > 10) { // seuil à adapter selon ton goût
+                //console.log('Ajustement de la largeur pour:', text);
+                const extra = Math.min(text.length * 5, 200); // limite l’élargissement max
+                node.style.width = (80 + extra) + "px";
+                node.style.whiteSpace = "normal"; // permet le retour à la ligne
+                node.style.handlers = "auto"; // ajuste la hauteur automatiquement
+                //node.style.background="goldenrod";
+            }
+        });
     </script>
 </body>
 
