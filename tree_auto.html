@@ -1,132 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Msaken Family Tree, Tunisia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
-    <link rel="stylesheet" href="style-tree.css">
-</head>
-
-<body>
-    <div class="header">
-        <h1>شجرة عائلات أهل القصور الخمسة، مساكن</h1>
-        <p>Msaken Family Tree,  Tunisia</p>
-    <div id="tree"></div>
-    <script src="data.js"></script>
+    <title>Redirect</title>
     <script>
-        function closePopup() {
-            const old = document.querySelector('.popup-person');
-            if (old) old.remove();
-        }
-
-        // ✅ Fonction popup réutilisable
-        function showPersonPopup(person, event) {
-            closePopup(); // Ferme toute popup précédente
-
-            const popup = document.createElement('div');
-            popup.className = 'popup-person';
-            // Trouver l'objet père
-            const pere = data.find(p => p.id === person.id_pere);
-            // Trouver l'objet grand-père à partir du père
-            const grandpere = pere ? data.find(p => p.id === pere.id_pere) : null;
-
-            // Contenu HTML de la popup
-            popup.innerHTML = `
-                <div class="close-btn" onclick="closePopup()">✖</div>
-                <h3>${person.nom}</h3>
-                <div><strong>ID:</strong> ${person.id}</div>
-                <div><strong></strong> ${person.genre === 'M' ? 'رجل' : 'امرأة'}</div>
-                <div><strong>الأب:</strong> ${pere ? pere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
-                <div><strong>الجدّ:</strong> ${grandpere ? grandpere.nom : 'محمّد الجدّ الجامع لأهل مساكن'}</div>
-                ${person.photourl ? `<div style="margin-top:8px;"><img src="${person.photourl}" alt="${person.nom}" style="max-width:150px; border-radius:4px;"></div>` : ''}`;
-
-            // Positionner près du clic
-            popup.style.left = (event.pageX + 10) + 'px';
-            popup.style.top = (event.pageY + 10) + 'px';
-
-            document.body.appendChild(popup);
-
-            // Fermer si on clique ailleurs
-            document.addEventListener('click', function handler(e) {
-                if (!popup.contains(e.target)) {
-                    closePopup();
-                    document.removeEventListener('click', handler);
-                }
-            });
-        }
-
-
-        const rootId = data.find(p => p.id_pere === null)?.id;
-
-        // Fonction récursive pour construire la structure Treant
-        function buildTree(rootId) {
-            const root = data.find(p => p.id === rootId);
-            if (!root) return null;
-            const children = data.filter(p => p.id_pere === root.id);
-            return {
-                text: { name: root.nom },
-                HTMLclass: root.genre === "M" ? "node male" : "node female",
-                HTMLid: "node-" + root.id,
-                children: children.map(c => buildTree(c.id))
-            };
-        }
-
-        const chart_config = {
-            chart: {
-                container: "#tree",
-                rootOrientation: "NORTH", // chaque génération sur une ligne
-                connectors: { type: "step" },
-                nodeAlign: "CENTER",
-                levelSeparation: 25,
-                siblingSeparation: 7,
-                subTeeSeparation: 40,
-                animateOnInit: false,
-                callback: {
-                    onTreeLoaded: () => {
-                        // Actions au clic
-                        data.forEach(p => {
-                            const el = document.getElementById("node-" + p.id);
-                            if (el) {
-                                el.addEventListener('click', e => {
-                                    e.stopPropagation();
-                                    showPersonPopup(p, e); // ✅ ta fonction popup personnalisée
-                                });
-                            }
-                        });
-                        const targetId = -17;
-                        const targetNode = document.getElementById("node-" + targetId);
-                        if (targetNode) {
-                            // Centrer ce nœud dans la fenêtre d’affichage
-                            targetNode.scrollIntoView({
-                                behavior: "smooth",  // défilement fluide
-                                block: "center",     // centrer verticalement
-                                inline: "center"     // centrer horizontalement
-                            });
-                        }
-                    }
-                }
-            },
-            nodeStructure: buildTree(rootId)
-        };
-
-        new Treant(chart_config);
-        // ✅ Ajuster la largeur des nœuds selon le texte
-        document.querySelectorAll('.node').forEach(node => {
-            const text = node.textContent.trim();
-            //console.log('text:',node.textContent+'---length:',text.length);
-            if (text.length > 10) { // seuil à adapter selon ton goût
-                //console.log('Ajustement de la largeur pour:', text);
-                const extra = Math.min(text.length * 5, 200); // limite l’élargissement max
-                node.style.width = (80 + extra) + "px";
-                node.style.whiteSpace = "normal"; // permet le retour à la ligne
-                node.style.handlers = "auto"; // ajuste la hauteur automatiquement
-                //node.style.background="goldenrod";
-            }
-        });
+        // Redirection immédiate
+        window.location.href = "https://kamelgazzah.github.io/msaken/";
     </script>
+</head>
+<body>
+    Redirection en cours...
 </body>
-
 </html>
