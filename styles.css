@@ -62,27 +62,8 @@ nav a:hover {
   color: #c30b54;
 }
 
-/* 🎯 Zone des commentaires Cusdis */
-#cusdis_thread {
-  width: 100%;
-  max-width: 100%;
-  min-height: 400px;
-  box-sizing: border-box;
-  padding: 1rem;
-  margin: 2rem auto 0 auto;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
 
-/* 📱 Responsive pour mobile */
-@media (max-width: 768px) {
-  #cusdis_thread {
-    padding: 0.75rem;
-    min-height: 300px;
-    margin-top: 1.5rem;
-  }
-}
+
 
 
 /* ------------------------
@@ -144,7 +125,7 @@ blockquote {
     🌐 Language Switch
 ------------------------- */
 .language-switch {
-  position: absolute;
+  position: relative;
   top: 1rem;
   right: 1rem;
   font-size: 0.95rem;
@@ -185,7 +166,7 @@ blockquote {
   }
 
   .language-switch {
-    position: static;
+    position: relative;
     text-align: center;
     margin-top: 1rem;
   }
