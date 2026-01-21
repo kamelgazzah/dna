@@ -171,3 +171,20 @@ blockquote {
     margin-top: 1rem;
   }
 }
+
+section > div {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+
+section > div img {
+  width: 120px; /* ajuste si besoin */
+  height: auto;
+}
+
+.right-image {
+  float: right;
+  margin: 0 0 10px 20px; /* espace entre texte et image */
+  width: 120px; /* ajuste si nécessaire */
+  height: auto;
+}
