@@ -96,7 +96,7 @@
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 60px;
+      top: 100%;
       right: 10px;
       background-color: #002f4b;
       border: 1px solid #fff;
@@ -168,7 +168,7 @@
       <div class="bar3"></div>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu" onmouseleave="hideMenu()">
+    <div class="mobile-menu" id="mobileMenu">
       <a href="index.html">EN</a>
       <a href="index_fr.html">FR</a>
       <a href="index_ar.html">العربية</a>
@@ -181,30 +181,5 @@
   </div>
 
 
-    <nav>
-        <ul>
-
-            <li><a href="search_en.html">Searching for My Origins</a></li>
-            <li><a href="j_l192.html">J-L192 Resources</a></li>
-            <li><a href="jl192_map.html">J-L192 Map</a></li>
-            <li><a href="salar_en.html">Msaken–China Connection</a></li>
-        </ul>
-    </nav>
-
-
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
-    });
-
-    function hideMenu() {
-      mobileMenu.style.display = "none";
-      hamburger.classList.remove("active");
-    }
-  </script>
 </body>
 </html>
